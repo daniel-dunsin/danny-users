@@ -1,5 +1,7 @@
 require('dotenv').config();
+require('colors');
 const cloudinary = require('cloudinary').v2;
+const fs = require('fs');
 
 const multer = require('multer');
 
@@ -36,6 +38,10 @@ const uploader = multer(multerConfigs);
 const uploadToCloud = async (path) => {
   const file = await cloudinary.uploader.upload(path, {
     folder: 'users-list',
+  });
+
+  await fs.unlink(path, () => {
+    console.log('Image deleted'.red.bold);
   });
 
   return file.url;

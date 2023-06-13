@@ -1,0 +1,40 @@
+<%- include("./components/header") %>
+
+<div class="main-container container">
+  <% if (message) { %> <%- include("./components/status-tab") %> <% } %>
+  <div class="form-container">
+    <form
+      action="/add-user"
+      method="post"
+      enctype="multipart/form-data"
+      class="user-form"
+    >
+      <h2 class="title">Add User</h2>
+      <div class="inputs">
+        <div class="input-container">
+          <label for="">Name</label>
+          <input type="text" name="name" required />
+        </div>
+
+        <div class="input-container">
+          <label for="">Email</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="input-container">
+          <label for="">Phone Number</label>
+          <input type="number" name="phoneNumber" required />
+        </div>
+
+        <div class="input-container">
+          <label for="">Picture</label>
+          <input type="file" name="image" required accept="image/*" />
+        </div>
+
+        <button class="submit-btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include("./components/footer") %>

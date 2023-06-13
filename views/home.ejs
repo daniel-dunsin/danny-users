@@ -1,5 +1,7 @@
 <%- include("./components/header") %>
 
-<div>Users list</div>
+<div class="main-container container">
+  <% if (message) { %> <%- include("./components/status-tab") %> <% } %>
+</div>
 
 <%- include("./components/footer") %>
