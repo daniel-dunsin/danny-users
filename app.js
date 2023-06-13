@@ -2,6 +2,7 @@ require('dotenv').config();
 require('colors');
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const xss = require('xss-clean');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
@@ -22,6 +23,7 @@ app.use(
     secret: process.env.SECRET,
   })
 );
+app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use((req, res, next) => {
   // Middleware to pass global messages
