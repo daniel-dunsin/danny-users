@@ -2,6 +2,39 @@
 
 <div class="main-container container">
   <% if (message) { %> <%- include("./components/status-tab") %> <% } %>
+
+  <div class="table-container">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users?.forEach((user, index)=>{ %>
+        <tr>
+          <td><%= index + 1 %> .</td>
+          <td class="image-cell">
+            <img
+              loading="lazy"
+              src="<%= user.imageUrl %>"
+              alt=""
+              referrerpolicy="no-referrer"
+            />
+            <p><%= user.name %></p>
+          </td>
+
+          <td><%= user.email %></td>
+
+          <td><%= user.phoneNumber %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <%- include("./components/footer") %>

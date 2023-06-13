@@ -15,7 +15,7 @@ const multerConfigs = {
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
       // Store in the images directory
-      return cb(null, 'images');
+      return cb(null, 'assets');
     },
     filename: (req, file, cb) => {
       // Add the time to the file name

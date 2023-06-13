@@ -182,3 +182,45 @@ a {
   background-color: rgb(203, 198, 250);
   color: rgb(6, 12, 90);
 }
+
+.table-container {
+  max-width: fit-content;
+  min-width: 100%;
+  overflow-x: scroll;
+  padding: 0 0.8rem;
+}
+
+.table-container .users-table {
+  border-collapse: collapse;
+  min-width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0rem;
+}
+
+.users-table th,
+.users-table td {
+  text-align: left;
+  padding: 0.7rem 0.3rem;
+  min-width: fit-content;
+}
+
+.users-table thead {
+  background-color: #333;
+  color: white;
+}
+
+.users-table .image-cell {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.users-table .image-cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
