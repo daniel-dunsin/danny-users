@@ -1,7 +1,8 @@
 <%- include("./components/header") %>
 
 <div class="main-container container">
-  <% if (message) { %> <%- include("./components/status-tab") %> <% } %>
+  <% if (message) { %> <%- include("./components/status-tab") %> <% } %> <% if
+  (users && users.length >0) { %>
 
   <div class="table-container">
     <table class="users-table">
@@ -35,6 +36,12 @@
       </tbody>
     </table>
   </div>
+  <% } else { %>
+  <div class="no-user">
+    <h2 class="">No user has been added</h2>
+    <a href="/add-user"><button>Add a user</button></a>
+  </div>
+  <%} %>
 </div>
 
 <%- include("./components/footer") %>
