@@ -1,0 +1,51 @@
+<%- include('components/header') %>
+
+<div>
+  <% if (message) { %> <%- include('components/status-tab') %> <% } %>
+
+  <div class="form-container">
+    <form
+      action="/edit-user/<%= user._id  %>"
+      method="post"
+      enctype="multipart/form-data"
+      class="user-form"
+    >
+      <h2 class="title">Edit User</h2>
+      <div class="inputs">
+        <div class="input-container">
+          <label for="">Name</label>
+          <input type="text" name="name" value="<%= user.name %>" required />
+        </div>
+
+        <div class="input-container">
+          <label for="">Email</label>
+          <input type="email" name="email" value="<%= user.email %>" required />
+        </div>
+
+        <div class="input-container">
+          <label for="">Phone Number</label>
+          <input
+            type="number"
+            name="phoneNumber"
+            value="<%= user.phoneNumber %>"
+            required
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="">Picture</label>
+          <input type="file" name="newImage" accept="image/*" />
+        </div>
+
+        <div class="user-prev-image">
+          <h3>Current image</h3>
+          <img src="/<%= user.imageUrl  %>" alt="<%= user.name  %>" />
+        </div>
+
+        <button class="submit-btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include("components/footer") %>

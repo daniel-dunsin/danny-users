@@ -12,6 +12,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Phone Number</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,13 @@
           <td><%= user.email %></td>
 
           <td><%= user.phoneNumber %></td>
+
+          <td class="actions">
+            <a href="edit-user/<%= user?._id %>"> <i class="fa fa-edit"></i></a>
+            <a href="delete-user/<%= user?._id %>">
+              <i class="fa fa-trash"></i>
+            </a>
+          </td>
         </tr>
         <% }) %>
       </tbody>
