@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 
 // Routes
-app.use('', userRoutes);
+app.use('/', userRoutes);
 
 // Connection
 const port = process.env.PORT || 3001;
